@@ -1,0 +1,14 @@
+<div class="formDiv">
+<form [formGroup]="loginForm" (ngSubmit)="logIn()" class="form">
+  <h4>Hi</h4>
+    <label for="email">Username</label>
+    <input type="text" name="email" formControlName="email">
+    <label for="password">Password</label>
+        <div class="password-container">
+          <input type="{{ show_password ? 'text' : 'password' }}" name="password" formControlName="password">
+          <input type="checkbox" (change)="showPassword()">
+        </div>
+    <button type="submit">Log-In</button>
+    <h4>Don't have an account?<a routerLink="/register">Click here to create one!</a></h4>
+</form>
+</div>

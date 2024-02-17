@@ -1,0 +1,48 @@
+<app-navbar></app-navbar>
+<div class="container">
+<div class="container-item">
+<h3>Submit new fine</h3>
+<form [formGroup]="fine" (ngSubmit)="OnSubmit()">
+    <label for="firstname">Firstname</label>
+    <input type="text" name="firstname" formControlName="firstname">
+    <label for="lastname">Lastname</label>
+    <input type="text" name="lastname" formControlName="lastname">
+    <label for="reason">Reason</label>
+    <select  name="reason" formControlName="reason" (change)="finePrice()" multiple>
+        <ng-container *ngIf="department === 'police'">
+            <option value="any">Any</option>
+            <option *ngFor="let policeReason of policeReasons">{{ policeReason.reason }}</option>
+        </ng-container>
+        <ng-container *ngIf="department === 'muncipality'">
+            <option value="any">Any</option>
+            <option *ngFor="let muncipalityReason of muncipalityReasons">{{ muncipalityReason.reason }}</option>
+        </ng-container>
+    </select>
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" formControlName="date">
+    <label for="time">Time</label>
+    <input type="time" id="time" name="time" formControlName="time">
+    <label for="price">Pay price</label>
+    <input type="number" name="price" formControlName="price">
+    <label for="image">Evidence</label>
+    <input type="file" name="image" formControlName="image" accept="image/" (change)="onImageSelected($event)" multiple>
+    <button id="submit" type="submit">Submit fine</button>
+</form>   
+</div>
+<div class="container-item">
+<h3>Globi</h3>
+<ul *ngFor="let fine of fines">
+    <div class="fine">
+        <li>Firstname: {{fine.firstname}}</li>
+        <li>Lastname: {{fine.lastname}}</li>
+        <li>Date: {{fine.date}}</li>
+        <li>Time: {{fine.time}}</li>
+        <li>Reason: {{fine.reason}}</li>
+        <li>Price: {{fine.price}}лв.</li>
+        <button (click)="onFineClick(fine.documentId)">Modify</button>
+        <button (click)="deleteDoc(fine.documentId)">Delete</button>
+        <li>Last updated: {{fine.timestamp.toDate()}}</li>
+    </div>
+    </ul>
+</div>
+</div>

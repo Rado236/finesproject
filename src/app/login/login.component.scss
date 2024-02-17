@@ -1,0 +1,30 @@
+body{
+    background-image: url('/src/assets/logo.jpg');
+    background-position: center;
+    background-size: contain;
+}
+.formDiv{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    width: 50vh;
+    border: 2px solid black;
+    border-radius: 3px;
+    background-color: azure;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+form input,button,label,h4 {
+    margin-bottom: 10px;
+}
+form button{
+    margin: auto;
+}
+form input {
+    height: 24px;
+}

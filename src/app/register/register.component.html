@@ -1,0 +1,19 @@
+<form [formGroup]="registration" (ngSubmit)="OnSubmit()">
+    <label for="displayName">Username</label>
+    <input type="text" name="displayName" id="displayName" formControlName="displayName" required>
+    <label for="email">Email</label>
+    <input type="email" name="email" formControlName="email" required>
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" formControlName="password" required>
+    <label for="department">Department</label>
+    <select name="department" id="department" formControlName="department">
+        <option value="police">Police</option>
+        <option value="muncipality">Muncipality</option>
+    </select>
+    <label for="phoneNumber">Phone Number</label>
+    <input type="text" name="phoneNumber" id="phoneNumber" formControlName="phoneNumber" required>
+    <label for="photoURL">Avatar</label>
+    <input type="file" name="photoURL" id="photoURL" formControlName="photoURL" (change)="onFileSelected($event)" accept="image/" required>
+    <button type="submit" [disabled]="registration.invalid">Register Now!</button>
+    <h4>Already having account?<a routerLink="/login">Click here to log-in!</a></h4>
+</form>

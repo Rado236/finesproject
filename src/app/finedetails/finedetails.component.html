@@ -1,0 +1,22 @@
+<div *ngIf="fineData">
+    <p><strong>First Name:</strong>{{ fineData.firstname }}</p>
+    <p><strong>Last Name:</strong>{{ fineData.lastname }}</p>
+    <p><strong>Date:</strong>{{ fineData.date }}</p>
+    <p><strong>Time:</strong>{{ fineData.time }}</p>
+    <p><strong>Reason:</strong>{{fineData.reason}}</p>
+    <p><strong>Price:</strong>{{fineData.price}} лв.</p>
+    <p><strong>Issuer:</strong>{{fineData.issuer}}</p>
+    <div class="images">
+    <img [src]="imageUrl" *ngFor="let imageUrl of fineData.image">
+    </div>
+</div>
+
+<form [formGroup]="modify" (ngSubmit)="onSubmit()">
+    <label for="firstname">Firstname</label>
+    <input type="text"  formControlName="firstname">
+    <label for="lastname">Lastname</label>
+    <input type="text"  formControlName="lastname">
+    <label for="price">Price: </label>
+    <input type="text"  formControlName="price">
+    <button type="submit">Save</button>
+</form>

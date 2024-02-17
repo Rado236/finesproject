@@ -1,0 +1,15 @@
+{
+  "extensions": {
+    "firestore-user-document": "rowy/firestore-user-document@0.0.6",
+    "firestore-user-document-rq1c": "rowy/firestore-user-document@0.0.6",
+    "firestore-user-document-zc0f": "rowy/firestore-user-document@0.0.6"
+  },
+  "hosting": {
+    "public": "dist/ng-fines-project",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

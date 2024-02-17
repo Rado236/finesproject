@@ -1,0 +1,13 @@
+<app-navbar></app-navbar>
+<p>{{this.user?.displayName}}</p>
+<img [src]="this.authService.currentlySignedInUserAvatarURL" alt="">
+<p>{{this.user?.phoneNumber}}</p>
+<p>{{this.user?.email}}</p>
+<h3>Last issued fines by you</h3>
+<ul *ngFor="let fine of lastFines">
+    <li>Firstname:{{fine.firstname}}</li>
+    <li>Lastname:{{fine.lastname}}</li>
+    <li>Date: {{fine.date}}</li>
+    <li>Time: {{fine.time}}</li>
+    <li>Reason: {{fine.reason}}</li>
+</ul>
