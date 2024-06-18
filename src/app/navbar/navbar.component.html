@@ -5,7 +5,7 @@
     <div class="navbar-right">
         <h4>Username: {{this.user?.displayName}}</h4>
         <h4>Department: {{department}}</h4>
-        <img routerLink="profile/{{this.user?.uid}}" class="avatar" [src]="this.authService.currentlySignedInUserAvatarURL" alt="" style="max-height: 35px;width: 40px;">
+        <img routerLink="/profile/{{this.user?.uid}}" class="avatar" [src]="this.authService.currentlySignedInUserAvatarURL" alt="" style="max-height: 35px;width: 40px;">
         <button (click)="signOut()">Log out</button>
     </div>
 </div>

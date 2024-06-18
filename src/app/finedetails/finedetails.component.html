@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div *ngIf="fineData">
     <p><strong>First Name:</strong>{{ fineData.firstname }}</p>
     <p><strong>Last Name:</strong>{{ fineData.lastname }}</p>
@@ -7,11 +8,13 @@
     <p><strong>Price:</strong>{{fineData.price}} лв.</p>
     <p><strong>Issuer:</strong>{{fineData.issuer}}</p>
     <div class="images">
-    <img [src]="imageUrl" *ngFor="let imageUrl of fineData.image">
+        <h4>Evidence photos:</h4>
+    <img [src]="imageUrl" *ngFor="let imageUrl of fineData.image" width="400px" height="400px">
     </div>
 </div>
 
-<form [formGroup]="modify" (ngSubmit)="onSubmit()">
+<form class="modify_form" [formGroup]="modify" (ngSubmit)="onSubmit()">
+    <h4>Edit information:</h4>
     <label for="firstname">Firstname</label>
     <input type="text"  formControlName="firstname">
     <label for="lastname">Lastname</label>

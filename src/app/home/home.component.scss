@@ -2,6 +2,7 @@ form{
     display: flex;
     flex-direction: column;
     width: 60%;
+    margin-left: 20px;
 }
 
 form label {
@@ -12,7 +13,9 @@ form label {
 form input{
     height: 40px;
     border: 0;
-    border-bottom:1px solid orange ;
+    border-bottom:2px solid orange ;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 14px;
 }
 
 form input:focus{
@@ -20,6 +23,7 @@ form input:focus{
 }
 
 #submit{
+
     appearance: button;
   background-color: transparent;
   background-image: linear-gradient(to bottom, #fff, #f8eedb);
@@ -34,7 +38,7 @@ form input:focus{
   font-size: 100%;
   font-weight: 700;
   line-height: 24px;
-  margin: 0;
+  margin: 30px 0px 0px 0px;
   outline: 2px solid transparent;
   padding: 1rem 1.5rem;
   text-align: center;
@@ -81,5 +85,52 @@ form input:focus{
 
 
 
+.fine button {
+    margin: 5px;
+    align-items: center;
+  background-clip: padding-box;
+  background-color: #fa6400;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: 270;
+  justify-content: center;
+  line-height: 1.25;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+  height: 10px;
+}
+
+
+
+.container-item button:hover,
+.container-item button:focus {
+  background-color: #fb8332;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.container-item button:hover {
+  transform: translateY(-1px);
+}
+
+.container-item button:active {
+  background-color: #c85000;
+  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+  transform: translateY(0);
+}
 
 

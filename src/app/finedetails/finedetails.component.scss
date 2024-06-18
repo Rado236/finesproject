@@ -3,3 +3,14 @@
     flex-wrap: wrap;
     gap: 10px;
   }
+.modify_form{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  padding: 10px;
+}
+
+.modify_form button{
+  margin-top: 20px;
+}

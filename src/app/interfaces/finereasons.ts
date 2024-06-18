@@ -1,9 +1,9 @@
 export const policeReasons=[
-    {reason: 'Huii',price:100},
-    {reason: 'Pedal',price:100000}
+    {reason: 'Test1',price:100},
+    {reason: 'Test2',price:500}
 ]
 
 export const muncipalityReasons=[
-    {reason: 'Pedal',price:3322},
-    {reason:'Chukal malki deca',price:455555}
+    {reason: 'Test1',price:50},
+    {reason:'Test2',price:20}
 ]

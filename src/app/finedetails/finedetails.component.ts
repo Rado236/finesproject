@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { Fine } from '../interfaces/fines';
 import { collection, doc, getDoc, getFirestore, onSnapshot, serverTimestamp, updateDoc } from 'firebase/firestore'
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
 
 
 
@@ -16,9 +17,10 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class FinedetailsComponent implements OnInit{
   modify:FormGroup;
+  public user = this.authService.getUser();
   fineData:any;
   db = getFirestore();
-  constructor(private route: ActivatedRoute,private fb:FormBuilder) {
+  constructor(private route: ActivatedRoute,private fb:FormBuilder,public authService:AuthService) {
     this.modify=this.fb.group({
       firstname:[''],
       lastname:[''],

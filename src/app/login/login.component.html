@@ -1,6 +1,9 @@
-<div class="formDiv">
+<div class="formDiv" id="formDiv">
 <form [formGroup]="loginForm" (ngSubmit)="logIn()" class="form">
-  <h4>Hi</h4>
+  <label class="switch">
+    <input (click)="toggleSwitch()" id="checkbox" type="checkbox">
+    <span class="slider"></span>
+</label>
     <label for="email">Username</label>
     <input type="text" name="email" formControlName="email">
     <label for="password">Password</label>
@@ -8,7 +11,8 @@
           <input type="{{ show_password ? 'text' : 'password' }}" name="password" formControlName="password">
           <input type="checkbox" (change)="showPassword()">
         </div>
-    <button type="submit">Log-In</button>
-    <h4>Don't have an account?<a routerLink="/register">Click here to create one!</a></h4>
+    <button type="submit" [disabled]="loginForm.invalid">Log-In</button>
+    <div class="switch_dep_msg" *ngIf="formsubmited && department!==userDepartment">Please switch department or check your details!</div>
+    <h4 class="register_msg">Don't have an account?<a routerLink="/register">Click here to create one!</a></h4>
 </form>
 </div>
